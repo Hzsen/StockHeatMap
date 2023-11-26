@@ -28,3 +28,55 @@ Deliverables
 A fully functional prototype of the stock market heat map.
 Documentation outlining the design process and justification for design choices.
 A user guide explaining how to interact with the visualization tool.
+
+Certainly! Here's a template for a README file for your stock market heat map project. You can modify it as needed to fit the specifics of your project:
+
+---
+
+# Stock Market Heat Map Project
+
+## Overview
+This project aims to create an interactive heat map of the stock market, utilizing data from the Alpaca API. It visualizes various market metrics like stock price changes and trading volumes, providing insights into market trends and movements.
+
+## Features
+- **Real-time Data Visualization:** The heat map updates with the latest stock market data.
+- **Interactive Interface:** Users can hover over sections of the heat map to get more detailed information.
+- **Customizable Metrics:** Options to view different metrics such as price changes, volumes, etc.
+
+## Getting Started
+
+### Prerequisites
+- Python 3.x
+- Access to Alpaca API (API key and secret)
+
+### Installation
+1. Clone the repository:
+   ```bash
+   git clone [repository URL]
+   ```
+2. Install required Python libraries:
+   ```bash
+   pip install pandas matplotlib seaborn requests
+   ```
+
+### Setting Up Alpaca API
+1. Sign up for an Alpaca account and obtain your API keys.
+2. Store your API keys securely.
+
+## Usage
+- Run the main script to start the application:
+  ```bash
+  python main.py
+  ```
+- Use the interactive features on the heat map to explore different stock market metrics.
+
+## Contributing
+Contributions to this project are welcome. Please fork the repository and submit a pull request with your changes.
+
+## Acknowledgments
+- Alpaca API for providing stock market data.
+- Contributors and maintainers of Python libraries used in this project.
+
+---
+
+Remember to replace placeholders like `[repository URL]`, `[License Name]`, and any other specific details with the actual information related to your project. This template provides a general structure for your README, ensuring that users and contributors have a clear understanding of what the project is about, how to set it up, and how to use it.
