@@ -1,31 +1,46 @@
-import requests
+import yfinance as yf
 import pandas as pd
 
-# Replace these with your Alpaca API key and secret
-API_KEY = 'CKGQTS1OSUY1N2AEIRDH'
-SECRET_KEY = '0hVJVkpHNk06hD2LU9MUfkKh9scdL2M3xfLNQM9k'
-
-# Alpaca's endpoint URL for market data
-URL = "https://data.alpaca.markets/v1/bars/day"
-
-# The stock symbols you are interested in
-symbols = ['AAPL', 'MSFT', 'GOOG']  # example symbols
-
-# Set up headers with the API credentials
-headers = {
-    'APCA-API-KEY-ID': API_KEY,
-    'APCA-API-SECRET-KEY': SECRET_KEY
+# Example sector data with market capitalization (this would be obtained from your data source)
+# Note: Replace 'FB' with 'META' for Meta Platforms.
+sector_data = {
+    'Technology': {'AAPL': 2250000, 'MSFT': 1800000, 'GOOGL': 1500000, 'META': 1000000, 'INTC': 500000},
+    'Healthcare': {'JNJ': 2000000, 'PFE': 1500000, 'UNH': 1200000, 'MRK': 1000000, 'ABT': 800000},
+    # ... additional sectors and companies
 }
 
-# Prepare the parameters for the API request
-params = {
-    'symbols': ','.join(symbols),
-    'start': '2022-01-01',  # example start date
-    'end': '2022-12-31'     # example end date
-}
+# A list to store each company's data
+top_companies_list = []
 
-# Make the request
-response = requests.get(URL, headers=headers, params=params)
+for sector, companies in sector_data.items():
+    top_companies = sorted(companies, key=companies.get, reverse=True)[:10]
 
-# Convert the response to a pandas DataFrame
-data = pd.read_json(response.content)
+    for symbol in top_companies:
+        stock_data = yf.Ticker(symbol)
+
+        # Try to get the most recent data for this stock
+        try:
+            hist_data = stock_data.history(period="1d")
+            if not hist_data.empty:
+                latest_close_price = hist_data['Close'].iloc[-1]
+
+                # Create a DataFrame for this company's data
+                company_data = pd.DataFrame({
+                    'Symbol': [symbol],
+                    'Sector': [sector],
+                    'Market Cap': [companies[symbol]],
+                    'Latest Close Price': [latest_close_price]
+                })
+
+                # Add the DataFrame to the list
+                top_companies_list.append(company_data)
+            else:
+                print(f"No data found for {symbol}. The symbol may be delisted or incorrect.")
+        except Exception as e:
+            print(f"An error occurred for {symbol}: {e}")
+
+# Concatenate all the company DataFrames into a single DataFrame
+top_companies_data = pd.concat(top_companies_list, ignore_index=True)
+
+# Now `top_companies_data` is ready for visualization
+print(top_companies_data)

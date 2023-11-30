@@ -29,8 +29,6 @@ A fully functional prototype of the stock market heat map.
 Documentation outlining the design process and justification for design choices.
 A user guide explaining how to interact with the visualization tool.
 
-Certainly! Here's a template for a README file for your stock market heat map project. You can modify it as needed to fit the specifics of your project:
-
 ---
 
 # Stock Market Heat Map Project
