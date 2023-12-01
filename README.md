@@ -64,7 +64,7 @@ This project aims to create an interactive heat map of the stock market, utilizi
 ## Usage
 - Run the main script to start the application:
   ```bash
-  python main.py
+  python data.py
   ```
 - Use the interactive features on the heat map to explore different stock market metrics.
 
