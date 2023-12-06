@@ -4,6 +4,7 @@ there are a lot of packages should be installed, best install yfinance first if 
 ```
 pip install yfinance
 ```
+<https://pypi.org/project/yfinance/>
 
 <u>**Run the app.py file for demo**</u>
 
