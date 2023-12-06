@@ -1,5 +1,6 @@
 # StockHeatMap
-Data Visualization for Stock Market
+<u>**Run the app.py file for demo**</u>
+
 ## Stock Market Heat Map Visualization Project
 
 1. Introduction
@@ -37,44 +38,40 @@ A user guide explaining how to interact with the visualization tool.
 This project aims to create an interactive heat map of the stock market, utilizing data from the Alpaca API. It visualizes various market metrics like stock price changes and trading volumes, providing insights into market trends and movements.
 
 ## Features
-- **Real-time Data Visualization:** The heat map updates with the latest stock market data.
-- **Interactive Interface:** Users can hover over sections of the heat map to get more detailed information.
-- **Customizable Metrics:** Options to view different metrics such as price changes, volumes, etc.
+1. **Color-Coded Performance**: Each tile's color indicates the stock's daily performance, with green for positive, red for negative, and white or grey for no change.
 
-## Getting Started
+2. **Company Logos**: Each tile includes the company's logo, making it easier to identify the stock visually.
 
-### Prerequisites
-- Python 3.x
-- Access to Alpaca API (API key and secret)
+3. **Percentage Change**: The tiles show the percentage change of the stock price, providing quick insight into the stock's performance.
 
-### Installation
-1. Clone the repository:
-   ```bash
-   git clone [repository URL]
-   ```
-2. Install required Python libraries:
-   ```bash
-   pip install pandas matplotlib seaborn requests
-   ```
+4. **Size Coded Market Capitalization**: The size of each tile appears to represent the market capitalization of the stock, with larger tiles indicating larger companies.
 
-### Setting Up Alpaca API
-1. Sign up for an Alpaca account and obtain your API keys.
-2. Store your API keys securely.
+5. **Interactive Tooltips**: Hovering over a tile likely provides more detailed information, such as exact price change, market cap, or other relevant data.
 
-## Usage
-- Run the main script to start the application:
-  ```bash
-  python data.py
-  ```
-- Use the interactive features on the heat map to explore different stock market metrics.
+6. **Filtering Options**: The top bar includes options to filter the view based on performance percentage, enabling users to quickly isolate stocks that are performing within a certain range.
 
-## Contributing
-Contributions to this project are welcome. Please fork the repository and submit a pull request with your changes.
+7. **Zooming and Panning**: Users can zoom in or out to view more or fewer stocks in the heatmap.
 
-## Acknowledgments
-- Alpaca API for providing stock market data.
-- Contributors and maintainers of Python libraries used in this project.
+8. **Search Functionality**: There is likely a search feature that allows users to find a specific stock within the heatmap.
 
----
+9. **Layout and Design**: The overall design is grid-like, with a clear distinction between different sections of the market.
 
-Remember to replace placeholders like `[repository URL]`, `[License Name]`, and any other specific details with the actual information related to your project. This template provides a general structure for your README, ensuring that users and contributors have a clear understanding of what the project is about, how to set it up, and how to use it.
+10. **Dynamic Updating**: The heatmap updates in real-time, or at a specified interval, to reflect current market conditions.
+
+11. **Responsive Design**: The layout adjusts to different screen sizes and resolutions, ensuring usability across various devices.
+
+12. **Legend/Scale**: There is a color scale or legend that helps users understand the color coding in relation to stock performance percentages.
+
+To recreate this in Dash, 
+
+- Fetch real-time stock data, including daily changes and market capitalization.
+- Create a layout with dynamically sized and colored tiles based on fetched data.
+- Integrate company logos into the visualization.
+- Implement interactivity with tooltips that display more data on hover.
+- Add filtering functionality to view stocks based on performance criteria.
+- Enable zooming and panning within the heatmap.
+- Include a search feature to find specific stocks.
+- Ensure that the layout is responsive and adjusts to different screen sizes.
+- Update the data at regular intervals to reflect the current market state.
+
+Each of these features would require careful consideration of the data structure, UI components, and interactivity provided by Dash and Plotly.
