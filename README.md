@@ -1,5 +1,6 @@
 # StockHeatMap
 <u>**Run the app.py file for demo**</u>
+<u>**Run the analysis.py file for data analysis & plot**</u>
 
 ## Stock Market Heat Map Visualization Project
 
