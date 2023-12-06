@@ -1,6 +1,9 @@
 # StockHeatMap
 
 there are a lot of packages should be installed, best install yfinance first if needed.
+```
+pip install yfinance
+```
 
 <u>**Run the app.py file for demo**</u>
 
